@@ -35,28 +35,24 @@ void range(char *e){
 	
 	char temp[MAXSIZE];
 	for(i=0; e[i] !='\0'; i++){
-		
-	if(e[i] == '-'){
-	j--;
+	
+	if(e[i] == '-' && e[i+2]== '-')
+		temp[j] = e[i+1];
+	
+	if(e[i] == '-')
+		j--;
 	start = e[i-1];
 	end = e[i+1];
 	range = end - start;
 		for(k = 0; k < range; k++){
 			temp[j] = start++;
 			j++;
-			}
-	}
-	else{
-		temp[j] = e[i];
-		j++;
-	}
-	
-	}
+	}}
 	temp[j] = '\0';
 for(i=0; temp[i] !='\0'; i++)
 	e[i] = temp[i];
 e[i] = '\0';
-	printf("epanded s is: %s",temp);
+	
 
 }
 void output(char *set1, char *set2){
@@ -145,6 +141,27 @@ for(i=0; temp[i] !='\0'; i++)
 e[i] = '\0';
 }
 
-
+/* printf("expanded s is: %s\n",temp); */
+	
+	
+	/* 
+	if(e[i] == '-' && e[i-1] != '\0')
+		temp[j] = e[i+1];
+	
+	if(e[i] == '-'){
+	j--;
+	start = e[i-1];
+	end = e[i+1];
+	range = end - start;
+		for(k = 0; k < range; k++){
+			temp[j] = start++;
+			j++;
+			
+			}
+	}
+	else{
+		temp[j] = e[i];
+		j++;
+	} */
 
 

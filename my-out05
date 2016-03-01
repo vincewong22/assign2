@@ -1,6 +1,6 @@
-expanded s is: abcdefexpanded s is: xyz	The purpose of this xssignment is to write x progrxm to trxnslxte, 
-squeeze xnd delete zhxrxzters rexd from stxndxrd input, writing to stxndxrd 
-output.	We'll explxin some of these terms in more detxils further on.  
-The progrxm is x very simplified version of the tr progrxm xvxilxyle in Unix 
+	The purpose of this assignment is to write a program to translate, 
+squeeze and delete characters read from standard input, writing to standard 
+output.	We'll explain some of these terms in more details further on.  
+The program is a very simplified version of the tr program available in Unix 
 systems. 
 

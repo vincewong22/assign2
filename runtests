@@ -65,5 +65,5 @@ check_output out14 "./a2 A-Z a-z < input > my-out14"
 ./a2 a-e xyz < input > my-out15
 check_output out15 "./a2 -t a-e xyz < input > my-out15"
 
-./a2 a-d-g-j xyz < input > my-out16
+./a2 a-z- xyz < input > my-out16
 check_output out15 "./a2 -t a-e xyz < input > my-out15"
