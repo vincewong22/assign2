@@ -56,7 +56,7 @@ void range(char *e){
 for(i=0; temp[i] !='\0'; i++)
 	e[i] = temp[i];
 e[i] = '\0';
-	printf("expanded s is: %s",temp);
+	printf("epanded s is: %s",temp);
 
 }
 void output(char *set1, char *set2){
