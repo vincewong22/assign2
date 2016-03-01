@@ -23,7 +23,6 @@ size_t i;
 expand(expand1);
 expand(expand2);
 range(expand1);
-
 range(expand2);
 output(expand1,expand2);
 
@@ -36,39 +35,28 @@ void range(char *e){
 	
 	char temp[MAXSIZE];
 	for(i=0; e[i] !='\0'; i++){
-	if(e[i] == '-' && e[i+1] =='-' && e[i+2]=='-'){
-	e[i+1] = -1;
-	e[i+2] = -1;
-	}
-	
-	if(e[i] == '-' && isalpha(e[i+1])  && isalpha(e[i-1])){
+		
+	if(e[i] == '-'){
 	j--;
 	start = e[i-1];
 	end = e[i+1];
 	range = end - start;
 		for(k = 0; k < range; k++){
 			temp[j] = start++;
-			
 			j++;
 			}
-			temp[j] = start++;
-			
-			j++;
-			e[i+1] = -1;
 	}
 	else{
-		if(e[i] != -1){
 		temp[j] = e[i];
 		j++;
-		}
-	}
 	}
 	
+	}
 	temp[j] = '\0';
 for(i=0; temp[i] !='\0'; i++)
 	e[i] = temp[i];
 e[i] = '\0';
-	printf("expanded s is: %s",temp);
+	/* printf("expanded s is: %s",temp); */
 
 }
 void output(char *set1, char *set2){

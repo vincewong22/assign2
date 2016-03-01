@@ -1,4 +1,4 @@
-	the purpose of this assignment is to write a program to translate, 
+expanded s is: ABCDEFGHIJKLMNOPQRSTUVWXYZexpanded s is: abcdefghijklmnopqrstuvwxyz	the purpose of this assignment is to write a program to translate, 
 squeeze and delete characters read from standard input, writing to standard 
 output.	we'll explain some of these terms in more details further on.  
 the program is a very simplified version of the tr program available in unix 
