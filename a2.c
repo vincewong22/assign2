@@ -4,11 +4,10 @@
 #include <stdlib.h>
 
 #define MAXSIZE 256
-void print_number(int*, int*);
 void replace_char(char arg1, char arg2);
 void expand(char*);
 void output(char *set1, char *set2);
-
+void range(char *e);
 int main(int argc, char* argv[]){
 if(argc != 3){
 	perror("wrong argument count");
@@ -21,18 +20,45 @@ strcpy(expand1,argv[1]);
 strcpy(expand2,argv[2]);
 
 size_t i;
-
-/* printf("expand 1 %s\n",expand1);
-printf("expand 2 %s\n",expand2); */
-
 expand(expand1);
 expand(expand2);
-
+range(expand1);
+range(expand2);
 output(expand1,expand2);
 
 return 0;
 }
 
+void range(char *e){
+	size_t i,j=0,k;
+	size_t start, end,range;
+	
+	char temp[MAXSIZE];
+	for(i=0; e[i] !='\0'; i++){
+		
+	if(e[i] == '-'){
+	j--;
+	start = e[i-1];
+	end = e[i+1];
+	range = end - start;
+		for(k = 0; k < range; k++){
+			temp[j] = start++;
+			j++;
+			}
+	}
+	else{
+		temp[j] = e[i];
+		j++;
+	}
+	
+	}
+	temp[j] = '\0';
+for(i=0; temp[i] !='\0'; i++)
+	e[i] = temp[i];
+e[i] = '\0';
+	printf("expanded s is: %s",temp);
+
+}
 void output(char *set1, char *set2){
 
 int c;
@@ -41,22 +67,13 @@ size_t flag =0;
 int c_print;
 int truncate=0;
 
-/* printf("%c\n",set1[0]);
-printf("%c\n",set1[1]);
-printf("%c\n",set2[0]);
-printf("%c\n",set2[1]); */
-/* for(i=0; set1[i] !='\0'; i++)
-	printf("%c\n",set1[i]);
-for(i=0; set2[i] !='\0'; i++)
-	printf("%c\n",set2[i]); */
-/* printf("%c\n",set2[1]); */
-if(strlen(set2) > strlen(set1))
-	set2[strlen(set1)] = '\0';
+/*truncation*/
 if(strlen(set1) > strlen(set2))
-	set1[strlen(set2)] = '\0';
+	set1[strlen(set2)] = '\0'; 
+
 while((c=getchar()) != EOF){
 	c_print = c;
-	 for(i = 0; i<2; i++){
+	 for(i = 0; set1[i] !='\0'; i++){
 		if(c == set1[i]){
 			c_print = set2[i];
 		}	
@@ -64,9 +81,7 @@ while((c=getchar()) != EOF){
 	putchar(c_print);
 }
 }
-void print_number(int *five, int *six){
-printf("%d %d", *five, *six);
-}
+
 
 void expand(char *e){
 size_t i, j;
@@ -124,10 +139,10 @@ for(i = 0, j=0; e[i] !='\0'; i++,j++){
 	}
 }
 	
-	temp[j] = '\0';
+temp[j] = '\0';
 for(i=0; temp[i] !='\0'; i++)
 	e[i] = temp[i];
-
+e[i] = '\0';
 }
 
 
